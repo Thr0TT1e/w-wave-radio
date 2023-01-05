@@ -1,176 +1,206 @@
 .header
   display: flex
   flex-direction: column
-  &__section
-    background-color: $white
-    &-top
-      display: none
-      background-color: transparent
-      z-index: 300
-      &-middle
-        position: relative
-        z-index: 200
-      &-bottom
-        z-index: 100
-        border-top: 1px solid $lite-color
-        border-bottom: 1px solid $lite-color
-  &__container-top
-    display: flex
-    justify-content: space-between
-    align-items: center
-    height: 60px
-  &__login-top
-    display: none
-    padding: 6px 23px
-  &__container-middle
-    display: flex
-    justify-content: space-between
-    align-items: center
-    min-height: 80px
-    height: 100%
-  &__login-middle
-    padding: 9px 31px
-  &__nav-middle
-    width: 100%
-    max-width: 638px
-  &__list-middle
-    flex-wrap: wrap
-    justify-content: space-between
-  &__link-middle
+
+.header__section
+  background-color: $white
+
+.header__section-top
+  display: none
+  background-color: transparent
+  z-index: 300
+
+.header__section-middle
+  position: relative
+  z-index: 200
+
+.header__section-bottom
+  z-index: 100
+  border-top: 1px solid $lite-color
+  border-bottom: 1px solid $lite-color
+
+.header__container-top
+  display: flex
+  justify-content: space-between
+  align-items: center
+  height: 60px
+
+.header__login-top
+  display: none
+  padding: 6px 23px
+
+.header__container-middle
+  display: flex
+  justify-content: space-between
+  align-items: center
+  min-height: 80px
+  height: 100%
+
+.header__login-middle
+  padding: 9px 31px
+
+.header__nav-middle
+  width: 100%
+  max-width: 638px
+
+.header__list-middle
+  flex-wrap: wrap
+  justify-content: space-between
+
+.header__link-middle
+  font-size: 20px
+
+.header__btns-group
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 100%
+  max-width: 152px
+
+.header__burger
+  display: none
+
+.header__burger-content
+  opacity: 0
+  width: 100%
+  height: auto
+  visibility: hidden
+  transition-property: opacity visibility
+  @include transition
+  background: 90% -50px $shade-gray url(@/images/header/spiral.png) no-repeat
+  padding-top: 106px
+
+.header__burger.active .header__burger-content
+  opacity: 1
+  visibility: visible
+
+.header__burger-nav
+  &-item
+    width: 50%
+    height: 104px
+  &-item-second
+    width: 50%
+    height: 62px
+  &-link
     font-size: 20px
-  &__btns-group
-    display: flex
-    justify-content: space-between
-    align-items: center
-    width: 100%
-    max-width: 152px
-  &__burger
-    display: none
-    &-content
-      opacity: 0
-      width: 100%
-      height: auto
-      visibility: hidden
-      transition-property: opacity visibility
-      @include transition
-      background: 90% -50px $shade-gray url(@/images/header/spiral.png) no-repeat
-      padding-top: 106px
-      &.active &-content
-        opacity: 1
-        visibility: visible
-      &-nav
-        &-item
-          width: 50%
-          height: 104px
-        &-item-second
-          width: 50%
-          height: 62px
-        &-link
-          font-size: 20px
-      &-list
-        display: flex
-        flex-wrap: wrap
-        width: 250px
-      &-nav-bottom
-        padding-top: 46px
-        display: none
-        background-color: $white
-  &__container-bottom
-    display: flex
-    align-items: center
-    justify-content: space-between
-    height: 100%
-    min-height: 58px
-  &__nav-bottom
-    flex: 0 1 611px
-    margin-right: 35px
-  &__list-bottom
-    justify-content: space-between
-  &__players-btns
-    display: flex
-    border-right: 1px solid $shade-gray
-    min-width: 300px
-    height: 40px
-    flex: 0 1 351px
-  &__player
-    width: 100%
-    padding-left: 3px
-    &-svg
-      margin-left: 10px
-      margin-right: 10px
-    &-title
-      margin-bottom: 2px
-  &__age
-    margin-left: 33px
-    width: 46px
-    height: 100%
-    min-height: 58px
-    background-color: $lite-color
-    &::before
-      content: '12+'
-      font-family: 'Open Sans', sans-serif
-      font-weight: 400
-      font-size: 12px
-      color: $text-gray
-  &__panel
-    display: none
-    min-height: 45px
-    height: 100%
-    background-color: $white
-    &-btn
-      transition-property: background-color, color
-      @include transition
-      border: 1px solid $lite-color
-      background-color: $white
-      min-height: 45px
-      color: $primary
-      font-weight: 500
-      &:active
-        color: $primary-light
-      &:active .header__panel-svg circle
-        fill: $primary-light
-      &-svg
-        margin-right: 5px
-        transition-property: transform
-        @include transition
-        & circle
-          transition-property: fill
-          @include transition
-      &.open
-        .header__panel-btn
-          background-color: $lite-color-transparent
-        .header__panel-svg
-          transform: rotate(45deg)
-        .header__panel-content
-          transform: translateY(45px)
-      &-content
-        display: flex
-        align-items: center
-        flex-wrap: wrap
-        background-color: $white
-        min-height: 80px
-        width: 100%
-        transform: translateY(-45px)
-        transition-property: transform
-        @include transition
-        z-index: -10
-      &-player
-        flex-direction: column
-        align-items: flex-start
-        min-height: 64px
-        height: 100%
-        min-width: 108px
-        &:first-child
-          border: none
-        &:not(:first-child)
-          padding-left: 35px
-          padding-right: 35px
-        &-svg
-          margin-bottom: 7px
-        &-title
-          font-size: 10px
-        &-title-radio
-          font-size: 14px
+
+.header__burger-list
+  display: flex
+  flex-wrap: wrap
+  width: 250px
+
+.header__burger-nav-bottom
+  padding-top: 46px
+  display: none
+  background-color: $white
+
+.header__container-bottom
+  display: flex
+  align-items: center
+  justify-content: space-between
+  height: 100%
+  min-height: 58px
+
+.header__nav-bottom
+  flex: 0 1 611px
+  margin-right: 35px
+
+.header__list-bottom
+  justify-content: space-between
+
+.header__players-btns
+  display: flex
+  border-right: 1px solid $shade-gray
+  min-width: 300px
+  height: 40px
+  flex: 0 1 351px
+
+.header__player
+  width: 100%
+  padding-left: 3px
+  &-svg
+    margin-left: 10px
+    margin-right: 10px
+  &-title
+    margin-bottom: 2px
+
+.header__age
+  margin-left: 33px
+  width: 46px
+  height: 100%
+  min-height: 58px
+  background-color: $lite-color
+  &::before
+    content: '12+'
+    font-family: 'Open Sans', sans-serif
+    font-weight: 400
+    font-size: 12px
+    color: $text-gray
+
+.header__panel
+  display: none
+  min-height: 45px
+  height: 100%
+  background-color: $white
+
+.header__panel-btn
+  transition-property: background-color, color
+  @include transition
+  border: 1px solid $lite-color
+  background-color: $white
+  min-height: 45px
+  color: $primary
+  font-weight: 500
+  &:active
+    color: $primary-light
+  &:active .header__panel-svg circle
+    fill: $primary-light
+
+.header__panel-svg
+  margin-right: 5px
+  transition-property: transform
+  @include transition
+  & circle
+    transition-property: fill
+    @include transition
+
+.header__panel.open
+  .header__panel-btn
+    background-color: $lite-color-transparent
+  .header__panel-svg
+    transform: rotate(45deg)
+  .header__panel-content
+    transform: translateY(45px)
+
+.header__panel-content
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  background-color: $white
+  min-height: 80px
+  width: 100%
+  transform: translateY(-45px)
+  transition-property: transform
+  @include transition
+  z-index: -10
+
+.header__panel-player
+  flex-direction: column
+  align-items: flex-start
+  min-height: 64px
+  height: 100%
+  min-width: 108px
+  &:first-child
+    border: none
+  &:not(:first-child)
+    padding-left: 35px
+    padding-right: 35px
+  &-svg
+    margin-bottom: 7px
+  &-title
+    font-size: 10px
+  &-title-radio
+    font-size: 14px
 
 // !MEDIA
 @media (max-width: 1249px)
@@ -202,44 +232,42 @@
       flex: 0 0 auto
       border: none
     &__player
+      border: none
+      padding: 0
       &:first-child
         display: none
       &-content
         display: none
       &-svg
         margin: 0
-        border: none
-        padding: 0
 
 // *320px
 @media (max-width: 580px)
   .header
     &__logo-top
       width: 88px
-      &__burger
-        &-content
-          background-image: none
-          padding-top: 60px
-        &-nav-item
-          width: 50%
-          height: 60px
-        &-nav-bottom
-          display: block
-      &__section-bottom
-        border: none
-      &__panel
+    &__burger
+      &-content
+        background-image: none
+        padding-top: 60px
+      &-nav-item
+        width: 50%
+        height: 60px
+      &-nav-bottom
         display: block
-      &__container-top
-        height: 54px
-      &__container-middle
-        min-height: 50px
-      &__container-bottom
-        display: none
-      &__login-top
-        display: inline-block
-      &__login-middle
-        display: none
-      &__btns-group
-        width: auto
-
-@media (max-width: 532px)
+    &__section-bottom
+      border: none
+    &__panel
+      display: block
+    &__container-top
+      height: 54px
+    &__container-middle
+      min-height: 50px
+    &__container-bottom
+      display: none
+    &__login-top
+      display: inline-block
+    &__login-middle
+      display: none
+    &__btns-group
+      width: auto
