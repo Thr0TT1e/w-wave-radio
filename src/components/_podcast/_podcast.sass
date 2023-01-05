@@ -1,0 +1,187 @@
+.podcast
+  padding-top: 96px
+  padding-bottom: 94px
+  &__title
+    margin-bottom: 29px
+  &__list
+    margin-bottom: 60px
+  &__item
+    display: flex
+    justify-content: space-between
+    margin-bottom: 30px
+    @include opacityAnim
+  &__card
+    display: flex
+    position: relative
+    background-color: $white
+    width: 100%
+    max-width: 540px
+    &:nth-child(2n+1)
+      margin-right: 30px
+  &__date
+    position: absolute
+    left: 0
+    bottom: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 51px
+    height: 16px
+    font-weight: 400
+    font-size: 10px
+    line-height: 1
+    color: $dark
+    background-color: $lite-color
+  &__content
+    display: flex
+    flex-direction: column
+    width: 100%
+  &__info
+    display: flex
+    justify-content: space-between
+    padding: 22px 30px 24px 30px
+    &-time
+      font-size: 12px
+      margin-bottom: 8px
+    &-title
+      margin-bottom: 3px
+    &-author
+      font-size: 16px
+      line-height: 1
+  &__btns-list
+    display: flex
+    align-items: center
+    border-top: 1px solid $lite-color
+    height: 32px
+  &__like-item
+    margin-left: 30px
+  &__btn
+    &-play
+      display: flex
+      align-items: center
+      &:focus &-svg circle
+        stroke: $primary-light
+      &:focus &-svg path
+        fill: $primary-light
+      &:hover &-svg circle
+        stroke: $primary
+      &:hover &-svg path
+        fill: $primary
+      &:active &-svg
+        fill: $primary-shade
+      &:active &-svg circle
+        stroke: $primary-shade
+      &:active &-svg path
+        fill: $white
+      &-svg
+        & circle
+          transition-property: stroke
+          @include transition
+        & path
+          transition-property: fill
+          @include transition
+    &-like
+      display: flex
+      align-items: center
+      &-count
+        color: $text-gray
+        padding-top: 2px
+        margin-left: 6px
+        transition-property: color
+        @include transition
+      &-svg
+        transition-property: fill
+        @include transition
+        & path
+          transition-property: fill
+          @include transition
+      &:focus
+        background-color: $primary-light
+      &:focus &-svg path
+        fill: $white
+      &:focus &-count
+        color: $white
+      &:hover
+        background-color: transparent
+      &:hover &-svg path
+        fill: $primary
+      &:hover &-count
+        color: $primary
+      &:active
+        background-color: transparent
+      &:active &-svg
+        fill: $primary-shade
+      &:active &-svg path
+        fill: $primary-shade
+      &:active &-count
+        color: $primary-shade
+    &-more
+      display: block
+      padding: 23px 52px
+      margin: 0 auto
+      font-weight: 500
+      font-size: 20px
+      line-height: 1
+  &__footer
+    width: 100%
+
+@media (max-width: 1249px)
+  .podcast
+    padding-bottom: 92px
+
+@media (max-width: 1000px)
+  .podcast
+    padding-bottom: 94px
+    &__item
+      flex-direction: column
+    &__card
+      &:nth-child(2n+1)
+        margin-right: 0
+      &:first-child
+        margin-bottom: 30px
+    &__footer
+      max-width: 540px
+
+@media (max-width: 580px)
+  .podcast
+    padding-top: 54px
+    padding-bottom: 54px
+    &__title
+      margin-bottom: 20px
+    &__list
+      max-width: 256px
+      margin-bottom: 10px
+    &__item
+      &_mobile_hide
+        display: none
+    &__card
+      display: flex
+      flex-direction: column
+    &__date
+      bottom: auto
+    &__info
+      min-height: 85px
+      padding: 14px 17px 15px 16px
+      align-items: center
+      &-title
+        font-size: 16px
+        margin-bottom: 5px
+      &-author
+        font-size: 12px
+    &__btn
+      &-more
+        font-size: 16px
+        padding: 15px 28px
+      &-play
+        width: 37px
+        height: 37px
+      &-like-count
+        padding-top: 0
+        font-size: 12px
+    &__like-item
+      margin-left: 32px
+    &__btns-list
+      height: 28px
+    &__footer
+      width: 100%
+      max-width: 256px
