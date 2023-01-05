@@ -1,7 +1,7 @@
 import '@/sass/main.sass';
 
 // Импорт компонентов HTML
-import headerComp from '@/assets/components/_header/header.html?raw';
+import headerComp from '@/components/_header/header.html?raw';
 
 /**
  * Функция добавления компонента в DOM дерево

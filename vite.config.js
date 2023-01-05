@@ -17,5 +17,4 @@ export default defineConfig({
     port: 8080,
     hot: true,
   },
-  assetsInclude: ['**/*.html'],
 });
