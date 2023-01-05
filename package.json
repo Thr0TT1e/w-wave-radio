@@ -11,7 +11,7 @@
     "url": "https://codeberg.org/Thr0TT1e/w-wave-radio"
   },
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
