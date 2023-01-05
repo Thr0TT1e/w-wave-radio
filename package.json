@@ -5,10 +5,10 @@
     "name": "Thr0TT1e",
     "email": "info@noble24.ru"
   },
-  "homepage": "https://codeberg.org/Thr0TT1e/base-html-final",
+  "homepage": "https://codeberg.org/Thr0TT1e/w-wave-radio",
   "repository": {
     "type": "git",
-    "url": "https://codeberg.org/Thr0TT1e/base-html-final"
+    "url": "https://codeberg.org/Thr0TT1e/w-wave-radio"
   },
   "private": true,
   "version": "0.0.1",
@@ -23,11 +23,9 @@
     "vite": "^4.0.4"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
     "choices.js": "^10.2.0",
-    "swiper": "^8.4.5",
-    "ymaps": "^0.2.1"
+    "swiper": "^8.4.5"
   }
 }
