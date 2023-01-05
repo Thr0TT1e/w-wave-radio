@@ -2,6 +2,7 @@ import '@/sass/main.sass';
 
 // Импорт компонентов HTML
 import headerComp from '@/components/_header/header.html?raw';
+import heroComp from '@/components/_hero/hero.html?raw';
 
 // Импорт дополнительных модулей
 import BurgerMenu from './burgerMenu';
@@ -39,6 +40,7 @@ function panelHandler() {
 
 // Вставляем компоненты HTML в основной DOM
 loadSection(headerComp, 'header', document.body);
+loadSection(heroComp, 'section', document.body);
 
 // HEADER
 const burger = new BurgerMenu({
